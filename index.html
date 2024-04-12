@@ -3,11 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital-Calculator</title>
+    <title>Vlad-Calc</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 </head>
 <body>
+
+<!--All elements must be inside this container-->
+<div class="calculatorContainer">
+
+    <div class="header">
+        <!--Left Part of the Header-->
+        <div class="coloredButtonsContainer">
+           <button class="red"></button>
+           <button class="yellow"></button>
+           <button class="green"></button>
+        </div>
+
+        <!-- Center; the title-->
+        <div class="title">Calculator</div>
+
+        <!--Left part, empty space for flex to work-->
+        <div class="empty"></div>
+    </div>
+
+    <!--Calc Display: old and new results-->
+    <div class="oldValue"></div>
+    <div class="currentValue"></div>
+
+    <!--Bottom part, the body: all numbers and operands-->
+    <div class="calculatorButtonsContainer">
+        <div class="buttonBlock">
+            <button class="clearResults">AC</button>
+            <button class="signChange">+/-</button>
+            <button class="getPercentage">%</button>
+            <button class="division">÷</button>
+        </div>
+
+        <div class="buttonBlock">
+            <button class="seven">7</button>
+            <button class="eight">8</button>
+            <button class="nine">9</button>
+            <button class="multiplication">×</button>
+        </div>
+
+        <div class="buttonBlock">
+            <button class="four">4</button>
+            <button class="five">5</button>
+            <button class="six">6</button>
+            <button class="subtraction">-</button>
+        </div>
+
+        <div class="buttonBlock">
+            <button class="one">1</button>
+            <button class="two">2</button>
+            <button class="three">3</button>
+            <button class="addition">+</button>
+        </div>
+
+        <div class="buttonBlock">
+            <button class="zero">0</button>
+            <button class="decimalPoint">.</button>
+            <button class="calculateButton">=</button>
+        </div>
+    </div>
+
+
+</div>
     
 </body>
 </html>
