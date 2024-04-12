@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vlad-Calc</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -27,43 +27,43 @@
         <div class="empty"></div>
     </div>
 
-    <!--Calc Display: old and new results-->
-    <div class="oldValue"></div>
-    <div class="currentValue"></div>
+    <!--Calc Display: old and new results, DOM x textContent to work-->
+    <div class="oldValue">0</div>
+    <div class="currentValue">0</div>
 
     <!--Bottom part, the body: all numbers and operands-->
     <div class="calculatorButtonsContainer">
         <div class="buttonBlock">
-            <button class="clearResults">AC</button>
-            <button class="signChange">+/-</button>
-            <button class="getPercentage">%</button>
-            <button class="division">÷</button>
+            <button class="function">AC</button>
+            <button class="operator">+/-</button>
+            <button class="operator">%</button>
+            <button class="operator">÷</button>
         </div>
 
         <div class="buttonBlock">
-            <button class="seven">7</button>
-            <button class="eight">8</button>
-            <button class="nine">9</button>
-            <button class="multiplication">×</button>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="operator">×</button>
         </div>
 
         <div class="buttonBlock">
-            <button class="four">4</button>
-            <button class="five">5</button>
-            <button class="six">6</button>
-            <button class="subtraction">-</button>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="operator">-</button>
         </div>
 
         <div class="buttonBlock">
-            <button class="one">1</button>
-            <button class="two">2</button>
-            <button class="three">3</button>
-            <button class="addition">+</button>
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="operator">+</button>
         </div>
 
         <div class="buttonBlock">
-            <button class="zero">0</button>
-            <button class="decimalPoint">.</button>
+            <button class="number">0</button>
+            <button class="function">.</button>
             <button class="calculateButton">=</button>
         </div>
     </div>
