@@ -8,7 +8,7 @@
 
 //key Functions
 function add(a, b) {
-    return (a + b);
+    return parseInt(a + b);
 }
 
 function subtract(a, b) {
@@ -31,18 +31,15 @@ let secondNumber = 0;
 // the operator must somehow store the operator names, i.e: operator should be = addition, or subtraction, etc. 
 
 function operate(firstNumber, operator, secondNumber){
-    switch (operator) {
-        case addition:
-            add(firstNumber, secondNumber)
-            break;
-        case subtraction:
-            subtract(firstNumber, secondNumber)
-            break;
-        case multiplication:
-            multiply(firstNumber, secondNumber)
-            break;
-        case division: 
-            divide(firstNumber, secondNumber)
+     switch (operator) {
+        case "+":
+            return add(firstNumber, secondNumber)
+        case "-":
+            return subtract(firstNumber, secondNumber)
+        case "×":
+            return multiply(firstNumber, secondNumber)
+        case "/": 
+            return divide(firstNumber, secondNumber)
     }
 }
 
@@ -61,7 +58,17 @@ userInputNumber.addEventListener("click", getUserNumber)
 
 function getUserNumber(e) {
     //multiple functions with different purposes: one if a number is clicked, another if an operator is clicked, and another if a function is clicked
-    alert(e.target.className)
+
+    //doesnt work as intended, re-write this but take inspiration before deleting
+    if (e.target.className == "number") {
+        currentValue.textContent = e.target.textContent;
+        firstNumber = currentValue.textContent;
+    } else if (e.target.className == "operator") {
+        oldValue.textContent = currentValue.textContent;
+        currentValue.textContent = operate(firstNumber, e.target.textContent, secondNumber);
+        secondNumber = currentValue.textContent
+        }
+    
 
     //a user has to be able to click multiple buttons, to allow for multiple digit numbers, and then select the operand, and then the second number
     };
