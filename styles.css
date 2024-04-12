@@ -1,0 +1,79 @@
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculatorContainer {
+    display: flex;
+    flex-direction: column;
+    border: black 1px solid;
+    width: 200px;
+    height: 300px;
+    border-radius: 2px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0px;
+    background-image: linear-gradient(to right, gainsboro, antiquewhite );
+}
+
+.coloredButtonsContainer {
+    display: flex;
+    align-items: center;
+    margin-left: -5px;
+}
+
+.red,
+.yellow,
+.green {
+    border-radius: 20px;
+    padding: 5px;
+    margin: 0 2px;
+    border-style: solid;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.title {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: -20px;
+}
+
+.oldValue {
+    background-color: #333333;
+    padding: 8px;
+    color: gainsboro;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 10px;
+}
+
+.currentValue {
+    background-color: #333333;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+}
+
+.calculatorButtonsContainer {
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+}
