@@ -1,8 +1,8 @@
 body {
-    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('images/bakckground.jpeg');
 }
 
 .calculatorContainer {
@@ -10,8 +10,9 @@ body {
     flex-direction: column;
     border: black 1px solid;
     width: 200px;
-    height: 300px;
+    height: 295px;
     border-radius: 2px;
+    margin-top: 150px;
 }
 
 .header {
@@ -75,5 +76,21 @@ body {
     background-color: #333333;
     display: flex;
     flex-direction: column;
-    height: 250px;
+    height: 220px;
+    align-items: center;
+}
+
+.userInput{
+    height: 38px;
+    width: 45px;
+    border-radius: 0px;
+    border-style: solid;
+    margin-top: 2px;
+}
+
+.calculateButton {
+    height: 38px;
+    width: 94px;
+    border-radius: 0px;
+    border-style: solid;
 }
