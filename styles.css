@@ -56,7 +56,7 @@ body {
 
 .oldValue {
     background-color: #333333;
-    padding: 8px;
+    padding: 2px 12px 0px;
     color: gainsboro;
     display: flex;
     justify-content: flex-end;
@@ -80,7 +80,9 @@ body {
     align-items: center;
 }
 
-.userInput{
+.number,
+.operator,
+.function{
     height: 38px;
     width: 45px;
     border-radius: 0px;
