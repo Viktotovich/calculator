@@ -143,3 +143,20 @@ function notExceedingDigits(){
         return false;
     }
 }
+
+//keyboard support - separate from everything:
+allowedNumerics = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+window.addEventListener("keydown", function(e){  
+    getRidOfZero();
+    if (e.key === 'Enter') {
+        e.preventDefault();
+    } else if (allowedNumerics.includes(e.key) && notExceedingDigits() && operator == '') {   
+        currentValue.textContent += e.key;
+        firstNumber = +currentValue.textContent;
+    } else if (allowedNumerics.includes(e.key) && notExceedingDigits() && operator != '') {
+        currentValue.textContent += e.key;
+        secondNumber = +currentValue.textContent;
+    }
+    })
+
