@@ -113,8 +113,13 @@ function getResult() {
     if (operator != '') {
         let result = operate(firstNumber, operator, secondNumber)
         oldValue.textContent = `${firstNumber} ${operator} ${secondNumber} `
-        currentValue.textContent = result;
-        firstNumber = result;
+        if (parseInt(result) < 0.00000000001) {
+            currentValue.textContent = result.toFixed(10);
+            firstNumber = result;
+        } else {
+            currentValue.textContent = result;
+            firstNumber = result;
+        }
     }
 }
 
