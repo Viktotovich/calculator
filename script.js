@@ -137,7 +137,7 @@ function noDuplicates() {
 
 function notExceedingDigits(){
     let digitTracker = Array.from(currentValue.textContent)
-    if (digitTracker.length < 12) {
+    if (digitTracker.length < 10) {
         return true;
         } else {
         return false;
