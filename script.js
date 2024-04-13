@@ -74,8 +74,13 @@ function getUserNumber(e) {
             secondNumber = currentValue.textContent;
         }
     } else if (e.target.className == "operator") {
+            //operator is whatever operator user clicks on
             operator = e.target.textContent;
+            // incase user adds numbers or modifies the sum 
+            firstNumber = currentValue.textContent;
+            //move user number and assign it to a
             oldValue.textContent = firstNumber;
+            //make space for value b
             currentValue.textContent = 0;
     } else if (e.target.className == "utility") {
         if (e.target.textContent == "%") {
