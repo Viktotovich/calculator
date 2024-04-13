@@ -27,9 +27,9 @@
         <div class="empty"></div>
     </div>
 
-    <!--Calc Display: old and new results, DOM x textContent to work-->
-    <div class="oldValue">0</div>
-    <div class="currentValue">0</div>
+    <!--old number above new number, to see what is being operated on-->
+    <div class="oldValue"></div>
+    <div class="currentValue"></div>
 
     <!--Bottom part, the body: all numbers and operands-->
     <div class="calculatorButtonsContainer">
@@ -62,8 +62,8 @@
         </div>
 
         <div class="buttonBlock">
-            <button class="number">0</button>
-            <button class="function">.</button>
+            <button class="number" id="zero">0</button>
+            <button class="utility">.</button>
             <button class="calculateButton">=</button>
         </div>
     </div>
