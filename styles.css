@@ -82,15 +82,33 @@ body {
 
 .number,
 .operator,
-.function{
+.function,
+.utility,
+.calculateButton  {
     height: 38px;
     width: 45px;
     border-radius: 0px;
     border-style: solid;
     margin-top: 2px;
+    transition: background-color 0.3s;
 }
 
+.operator,
+.function,
 .calculateButton {
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+.operator:hover,
+.function:hover,
+.calculateButton:hover {
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+
+#zero {
     height: 38px;
     width: 94px;
     border-radius: 0px;
