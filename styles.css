@@ -84,7 +84,8 @@ body {
 .operator,
 .function,
 .utility,
-.calculateButton  {
+.calculateButton,
+#getPercentage  {
     height: 38px;
     width: 45px;
     border-radius: 0px;
@@ -95,15 +96,25 @@ body {
 
 .operator,
 .function,
-.calculateButton {
+.calculateButton,
+#getPercentage {
     background-color: antiquewhite;
     cursor: pointer;
 }
 
 .operator:hover,
 .function:hover,
-.calculateButton:hover {
+.calculateButton:hover,
+#getPercentage:hover {
     background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+.operator:active,
+.function:active,
+.calculateButton:active,
+#getPercentage:active {
+    background: linear-gradient(to bottom, #e7e7e7, #d7d7d7);
     transition: background-color 0.3s;
 }
 
