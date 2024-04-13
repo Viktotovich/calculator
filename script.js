@@ -63,14 +63,16 @@ function operate(firstNumber, operator, secondNumber){
 
 function getUserNumber(e) {
     if (e.target.className == "number" && notExceedingDigits()) {
-        getRidOfZero();
+        fixDisplayZero();
         if (operator == '') {
             //the a of the equation, is the current number on display
             currentValue.textContent += e.target.textContent;
-            firstNumber = +currentValue.textContent;
+            currentValue.textContent = removeZero(currentValue.textContent);
+            firstNumber = currentValue.textContent;
         } else {
             //if operator exists, make the number the b of the equation
             currentValue.textContent += e.target.textContent;
+            currentValue.textContent = removeZero(currentValue.textContent);
             secondNumber = currentValue.textContent;
         }
     } else if (e.target.className == "operator") {
@@ -98,11 +100,8 @@ function getUserNumber(e) {
         }
     };
 
-// the 0 is causing too many problems, starting from displaying 0x
-function getRidOfZero() {
-    if (currentValue.textContent == 0) {
-        currentValue.textContent = '';
-    } else if (currentValue.textContent == "Can't Divide 0's") {
+function fixDisplayZero() {
+    if (currentValue.textContent == "Can't Divide 0's") {
         //was bug, now a feature, fixed enough to not be a hinderance 
         currentValue.textContent = '';
         oldValue.textContent = 0;
@@ -144,18 +143,26 @@ function notExceedingDigits(){
     }
 }
 
+function removeZero(string) {
+    sum = string * 1;
+    return sum;
+}
+
 //keyboard support - separate from everything:
 allowedNumerics = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 window.addEventListener("keydown", function(e){  
-    getRidOfZero();
-    if (e.key === 'Enter') {
+    fixDisplayZero();
+    if (e.key === 'Enter' || e.key === 'Shift') {
         e.preventDefault();
-    } else if (allowedNumerics.includes(e.key) && notExceedingDigits() && operator == '') {   
+    } else if (allowedNumerics.includes(e.key) && notExceedingDigits() && operator == '') {
         currentValue.textContent += e.key;
-        firstNumber = +currentValue.textContent;
+        currentValue.textContent = removeZero(currentValue.textContent);
+        firstNumber = currentValue.textContent;
     } else if (allowedNumerics.includes(e.key) && notExceedingDigits() && operator != '') {
+        parseInt(currentValue.textContent);
         currentValue.textContent += e.key;
+        currentValue.textContent = removeZero(currentValue.textContent);
         secondNumber = +currentValue.textContent;
     }
     })
