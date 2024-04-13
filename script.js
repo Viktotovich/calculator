@@ -62,7 +62,7 @@ function operate(firstNumber, operator, secondNumber){
 }
 
 function getUserNumber(e) {
-    if (e.target.className == "number") {
+    if (e.target.className == "number" && notExceedingDigits()) {
         getRidOfZero();
         if (operator == '') {
             //the a of the equation, is the current number on display
@@ -86,7 +86,7 @@ function getUserNumber(e) {
         if (e.target.textContent == "%") {
             currentValue.textContent = (firstNumber / 100).toFixed(5);
             firstNumber = currentValue.textContent;
-        } else if (e.target.textContent == ".") {
+        } else if (e.target.textContent == "." && noDuplicates()) {
             //bug of allowing multiple dots
             currentValue.textContent += ".";
             firstNumber = currentValue.textContent;
@@ -95,7 +95,7 @@ function getUserNumber(e) {
             currentValue.textContent *= -1
             firstNumber = currentValue.textContent;
         }
-    }
+        }
     };
 
 // the 0 is causing too many problems, starting from displaying 0x
@@ -133,4 +133,13 @@ function noDuplicates() {
         } else {
             return true;
         }
+}
+
+function notExceedingDigits(){
+    let digitTracker = Array.from(currentValue.textContent)
+    if (digitTracker.length < 12) {
+        return true;
+        } else {
+        return false;
+    }
 }
