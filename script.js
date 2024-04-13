@@ -86,8 +86,13 @@ function getUserNumber(e) {
         if (e.target.textContent == "%") {
             currentValue.textContent = (firstNumber / 100).toFixed(5);
             firstNumber = currentValue.textContent;
-        } else if (e.target.textContent == "." && noDuplicates()) {
+        } else if (e.target.textContent == ".") {
+            //bug of allowing multiple dots
             currentValue.textContent += ".";
+            firstNumber = currentValue.textContent;
+        } else if (e.target.textContent == '+/-') {
+            //work of genius
+            currentValue.textContent *= -1
             firstNumber = currentValue.textContent;
         }
     }
