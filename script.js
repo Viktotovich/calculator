@@ -81,6 +81,9 @@ function getUserNumber(e) {
         if (e.target.textContent == "%") {
             currentValue.textContent = (firstNumber / 100).toFixed(5);
             firstNumber = currentValue.textContent;
+        } else if (e.target.textContent == "." && noDuplicates()) {
+            currentValue.textContent += ".";
+            firstNumber = currentValue.textContent;
         }
     }
     };
@@ -113,12 +116,11 @@ function clearCalculator(){
     oldValue.textContent = 0;
     operator = '';
 }
-    
-//a user has to be able to click multiple buttons, to allow for multiple digit numbers, and then select the operand, and then the second number
 
-//the calculation is done only after user clicks the equality button
-
-
-
-//https://www.w3schools.com/js/js_function_parameters.asp
-//Take time to plan the structure
+function noDuplicates() {
+        if (firstNumber.toString().includes(".")) {
+            return false
+        } else {
+            return true;
+        }
+}
