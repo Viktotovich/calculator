@@ -15,10 +15,9 @@ function multiply(a = 1, b = 1){
 
 function divide(a, b){
     if (a == 0 || b == 0) {
-        alert("it got here")
         return "Can't Divide 0's"
     } else {
-    return(a / b);
+        return(a / b);
     }
 }
 
@@ -55,7 +54,7 @@ function operate(firstNumber, operator, secondNumber){
            return subtract(firstNumber, secondNumber)
        case "×":
            return multiply(firstNumber, secondNumber)
-       case "/": 
+       case "÷": 
            return divide(firstNumber, secondNumber)
        case "%": 
            return firstNumber / 100;
@@ -74,18 +73,27 @@ function getUserNumber(e) {
             currentValue.textContent += e.target.textContent;
             secondNumber = currentValue.textContent;
         }
-        //operator assign-er is perfect, don't touch
     } else if (e.target.className == "operator") {
             operator = e.target.textContent;
             oldValue.textContent = firstNumber;
             currentValue.textContent = 0;
+    } else if (e.target.className == "utility") {
+        if (e.target.textContent == "%") {
+            currentValue.textContent = (firstNumber / 100).toFixed(5);
+            firstNumber = currentValue.textContent;
         }
+    }
     };
 
 // the 0 is causing too many problems, starting from displaying 0x
 function getRidOfZero() {
     if (currentValue.textContent == 0) {
         currentValue.textContent = '';
+    } else if (currentValue.textContent == "Can't Divide 0's") {
+        //was bug, now a feature, fixed enough to not be a hinderance 
+        currentValue.textContent = '';
+        oldValue.textContent = 0;
+        firstNumber = 0;
     }
 }
 
